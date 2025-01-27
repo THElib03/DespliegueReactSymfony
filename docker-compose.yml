@@ -5,7 +5,7 @@ services:
         build:
             context: ./frontend
             dockerfile: DockerfileFrontedMMV
-            container-name: frontendMMV
+        container_name: frontendMMV
         ports:
          - 3000:3000
         volumes:
@@ -20,7 +20,7 @@ services:
         build:
             context: ./backend
             dockerfile: DockerfileBackendMMV
-        container-name: backendMMV
+        container_name: backendMMV
         command: bash -c "composer install && php -S 0.0.0.0:8000 -t public"
         ports:
          - 8000:8000
@@ -33,7 +33,7 @@ services:
         build:
             context: ./web
             dockerfile: DockerfileWebMMV
-        container-name: webMMV
+        container_name: webMMV
         ports:
          - 80:80 # si tienes problemas con el puerto 80 cambia el puerto externo aquí
         networks:
